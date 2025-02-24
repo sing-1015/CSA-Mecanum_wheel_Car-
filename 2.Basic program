@@ -1,0 +1,52 @@
+//Lower Right Wheel
+const int IN1 = 13;
+const int IN2 = 12;
+const int ENA = 11;
+//Lower Left Wheel
+const int IN3 = 9;
+const int IN4 = 8;
+const int ENB = 10;
+//Top Right Wheel
+const int IN5 = 7;
+const int IN6 = 4;
+const int ENC = 6;
+//Top Left Wheel
+const int END = 5;
+
+void setup() {
+  pinMode(IN1, OUTPUT);  //Lower Right Wheel
+  pinMode(IN2, OUTPUT);
+  pinMode(ENA, OUTPUT);
+
+  pinMode(IN3, OUTPUT);  //Lower Left Wheel
+  pinMode(IN4, OUTPUT);
+  pinMode(ENB, OUTPUT);
+
+  pinMode(IN5, OUTPUT);  //Top Right Wheel
+  pinMode(IN6, OUTPUT);
+  pinMode(ENC, OUTPUT);
+
+  pinMode(A4, OUTPUT);  //Top Left Wheel
+  pinMode(A5, OUTPUT);
+  pinMode(END, OUTPUT);
+}
+
+void loop() {
+  Forward();
+  delay(2000);
+
+  analogWrite(ENA, 255);  //Car Speed
+  analogWrite(ENB, 255);
+  analogWrite(ENC, 255);
+  analogWrite(END, 255);
+}
+void Forward() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+  digitalWrite(IN5, LOW);
+  digitalWrite(IN6, LOW);
+  digitalWrite(A4, HIGH);
+  digitalWrite(A5, LOW);
+}
